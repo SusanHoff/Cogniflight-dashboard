@@ -39,25 +39,29 @@ function Dashboard() {
       blinkRate >= 20 ||
       blinkRate <= 10
     ) {
-      setAlert("! Pilot fatigue critical. Take action.");
+      setAlert("Pilot fatigue critical. Take action!");
     }
   }, [fatigueLevel, yawning, blinkRate]);
 
   return (
     <div className="dashboard-wrapper">
       <header className="header">
-        <h1>CogniFlight Dashboard</h1>
+        <h1>CogniFlight Pilot Dashboard</h1>
         <span>Pilot: Capt. John Smith</span>
       </header>
 
       <main className="vitals-grid">
-        <VitalsCard label="Temperature" value={temperature} unit="degrees C" />
+        <VitalsCard label="Temperature" value={temperature} unit=" degrees C" />
         <VitalsCard label="Humidity" value={humidity} unit="%" />
         {/* <VitalsCard label="Oxygen" value={oxygen}/> */}
         <VitalsCard label="Heart Rate" value={heartRate} unit="bpm" />
-        <VitalsCard label="Blink Rate" value={blinkRate} unit="blinks/minute" />
+        <VitalsCard
+          label="Blink Rate"
+          value={blinkRate}
+          unit=" blinks/minute"
+        />
         <VitalsCard label="Fatigue Level" value={fatigueLevel} />
-        <VitalsCard label="Alert" value="!" alert={alert} />
+        <VitalsCard label="Alert" value="***" alert={alert} />
       </main>
     </div>
   );
